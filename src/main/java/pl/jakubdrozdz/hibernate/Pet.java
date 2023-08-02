@@ -5,11 +5,13 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.SequenceGenerator;
-import lombok.RequiredArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 
-@RequiredArgsConstructor
+@NoArgsConstructor
 @Entity
 public class Pet {
+    @Getter
     @Id
     @SequenceGenerator(name = "pet_id", allocationSize = 1)
     @GeneratedValue(strategy=GenerationType.SEQUENCE,
@@ -18,4 +20,10 @@ public class Pet {
     private String name;
     private int age;
 
+    public Pet(String name, int age) {
+    }
+
+    public int getId() {
+        return id;
+    }
 }
