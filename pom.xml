@@ -45,5 +45,11 @@
             <artifactId>hibernate-core</artifactId>
             <version>6.3.0.CR1</version>
         </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.28</version>
+            <scope>provided</scope>
+        </dependency>
     </dependencies>
 </project>
