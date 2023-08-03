@@ -10,7 +10,7 @@ public class PetRepository {
     private static EntityManager entityManager = entityManagerFactory.createEntityManager();
 
     public void createNewPet(String name, int age){
-        System.out.println("New pet creation");
+        System.out.println("-----New pet creation-----");
         EntityTransaction transaction = entityManager.getTransaction();
         Pet pet = new Pet(name, age);
         transaction.begin();
@@ -18,6 +18,12 @@ public class PetRepository {
         entityManager.persist(pet);
         System.out.println("New pet ID: " + pet.getId());
         transaction.commit();
-        System.out.printf("Pet with ID: " + pet.getId() + " saved to DB");
+        System.out.println("Pet with ID: " + pet.getId() + " saved to DB");
+    }
+
+    public Pet findById(int id){
+        //entityManager.clear();
+        System.out.println("-----Find pet with ID: " + id + "-----");
+        return entityManager.find(Pet.class, id);
     }
 }

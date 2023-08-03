@@ -21,9 +21,20 @@ public class Pet {
     private int age;
 
     public Pet(String name, int age) {
+        this.name = name;
+        this.age = age;
     }
 
     public int getId() {
         return id;
+    }
+
+    @Override
+    public String toString() {
+        return "Pet{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", age=" + age +
+                '}';
     }
 }

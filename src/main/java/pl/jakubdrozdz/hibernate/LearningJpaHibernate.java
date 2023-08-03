@@ -5,5 +5,6 @@ public class LearningJpaHibernate {
     public static void main(String[] args) {
         PetRepository petRepository = new PetRepository();
         petRepository.createNewPet("Mamrotek", 2);
+        System.out.println(petRepository.findById(1));
     }
 }
