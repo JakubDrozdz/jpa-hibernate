@@ -1,4 +1,4 @@
-package pl.jakubdrozdz.hibernate;
+package pl.jakubdrozdz.hibernate.pet;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -14,7 +14,6 @@ import lombok.Setter;
 @Setter
 @Getter
 public class Pet {
-    @Getter
     @Id
     @SequenceGenerator(name = "pet_id", allocationSize = 1)
     @GeneratedValue(strategy=GenerationType.SEQUENCE,

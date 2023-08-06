@@ -1,4 +1,4 @@
-package pl.jakubdrozdz.hibernate.exception;
+package pl.jakubdrozdz.hibernate.pet.exception;
 
 public class PetNotFoundException extends Exception{
     public PetNotFoundException(String message){

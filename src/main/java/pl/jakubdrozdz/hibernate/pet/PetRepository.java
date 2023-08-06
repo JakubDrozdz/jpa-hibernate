@@ -1,15 +1,14 @@
-package pl.jakubdrozdz.hibernate;
+package pl.jakubdrozdz.hibernate.pet;
 
 import jakarta.persistence.EntityManager;
-import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.EntityTransaction;
-import jakarta.persistence.Persistence;
-import pl.jakubdrozdz.hibernate.exception.PetNotFoundException;
+import pl.jakubdrozdz.hibernate.pet.exception.PetNotFoundException;
 
 public class PetRepository {
-    private static EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("h2_db");
-    private static EntityManager entityManager = entityManagerFactory.createEntityManager();
-
+    private EntityManager entityManager;
+    public PetRepository(EntityManager entityManager){
+        this.entityManager = entityManager;
+    }
     public Pet createNewPet(String name, int age){
         System.out.println("-----New pet creation-----");
         EntityTransaction transaction = entityManager.getTransaction();
