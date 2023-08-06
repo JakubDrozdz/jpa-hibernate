@@ -4,8 +4,6 @@ import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityTransaction;
 import pl.jakubdrozdz.hibernate.Vet.exception.VetNotFoundException;
 import pl.jakubdrozdz.hibernate.appointment.Appointment;
-import pl.jakubdrozdz.hibernate.pet.Pet;
-import pl.jakubdrozdz.hibernate.pet.exception.PetNotFoundException;
 
 import java.util.List;
 

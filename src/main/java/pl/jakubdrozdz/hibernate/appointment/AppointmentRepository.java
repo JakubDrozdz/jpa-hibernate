@@ -4,7 +4,6 @@ import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityTransaction;
 import pl.jakubdrozdz.hibernate.appointment.exception.AppointmentNotFoundException;
 import pl.jakubdrozdz.hibernate.pet.Pet;
-import pl.jakubdrozdz.hibernate.pet.exception.PetNotFoundException;
 
 public class AppointmentRepository {
     private EntityManager entityManager;
