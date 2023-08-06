@@ -7,9 +7,12 @@ import jakarta.persistence.Id;
 import jakarta.persistence.SequenceGenerator;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @NoArgsConstructor
 @Entity
+@Setter
+@Getter
 public class Pet {
     @Getter
     @Id
@@ -23,10 +26,6 @@ public class Pet {
     public Pet(String name, int age) {
         this.name = name;
         this.age = age;
-    }
-
-    public int getId() {
-        return id;
     }
 
     @Override
