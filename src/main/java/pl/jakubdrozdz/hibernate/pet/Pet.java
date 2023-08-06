@@ -18,7 +18,7 @@ public class Pet {
     @SequenceGenerator(name = "pet_id", allocationSize = 1)
     @GeneratedValue(strategy=GenerationType.SEQUENCE,
             generator="pet_id")
-    private int id = -1;
+    private int id;
     private String name;
     private int age;
 
