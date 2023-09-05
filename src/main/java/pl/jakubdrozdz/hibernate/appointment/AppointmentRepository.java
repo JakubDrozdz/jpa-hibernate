@@ -19,6 +19,11 @@ public class AppointmentRepository {
         EntityTransaction entityTransaction = entityManager.getTransaction();
         entityTransaction.begin();
         Appointment appointment = new Appointment(pet);
+        try {
+            Thread.sleep(1500);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
         entityManager.persist(appointment);
         System.out.println("Created new appointment with ID: " + appointment.getId() + " for pet: " + appointment.getPet());
         entityTransaction.commit();
