@@ -6,6 +6,14 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import pl.jakubdrozdz.hibernate.pet.Pet;
 
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Date;
+
+import static jakarta.persistence.ConstraintMode.NO_CONSTRAINT;
+
 @NoArgsConstructor
 @Entity
 @Setter
@@ -17,11 +25,17 @@ public class Appointment {
             generator="appointment_id")
     private int id;
 
-    @OneToOne
+    @Id
+    @ManyToOne
     private Pet pet;
+
+    @Id
+    private String appointmentDate;
 
     public Appointment(Pet pet){
         this.pet = pet;
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
+        this.appointmentDate = dtf.format(LocalDateTime.now());
     }
 
     @Override

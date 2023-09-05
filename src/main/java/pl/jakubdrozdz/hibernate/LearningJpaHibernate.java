@@ -44,8 +44,10 @@ public class LearningJpaHibernate {
             e.printStackTrace();
         }
         Appointment mamrotrekAppointment = appointmentRepository.createAppointment(mamrotek);
+        Appointment mamrotrekAppointment2 = appointmentRepository.createAppointment(mamrotek);
         petsVet = vetRepository.addAppointments(petsVet, List.of(burekAppointment, mamrotrekAppointment));
         System.out.println(petsVet);
+        System.out.println(appointmentRepository.findAppointmentsByPet(mamrotek));
         /*System.out.println(pet);
         petRepository.delete(pet);
         try {
